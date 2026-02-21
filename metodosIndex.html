@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+<h2>JavaScript Arrays:</h2>
+<h3>findIndex() e indexOf()</h3>
+
+<p>Ambos devuelven el númenro de posición. Cuándo usarlos?</p>
+
+<p><b>findIndex(): </b>cuando necesitas usar <b>.splice()</b> o modificar el array original.</p>
+
+<p><b>indexOf(): </b>sólo para valores simples (strings o números) <b>NO PARA OBJETOS</b>.</p>
+
+
+
+
+
+<script>
+
+
+class Producto {
+
+        constructor(id, nombre, precio) {
+            this.id = id;
+            this.nombre = nombre;
+            this.precio = precio;
+        }
+
+}
+
+    const teclado = new Producto(101, "Teclado", 50);
+    const mouse = new Producto(102, "Mouse", 25);
+    const monitor = new Producto(103, "Monitor", 200);
+
+    const productos = []
+    
+    productos.push(teclado, mouse, monitor)
+
+    const productosCopy = productos.slice()
+
+    console.log(productos)
+    console.log(productosCopy)
+
+    let inputId = 101;
+
+    let indexToDelete = productosCopy.findIndex(elemento => elemento.id === inputId);
+
+    console.log(indexToDelete)
+
+    if(indexToDelete !== -1) {
+        productosCopy.splice(indexToDelete, 1)
+    }
+
+    console.log(productos)
+    console.log(productosCopy)
+
+    const categorias = ["Electrónica", "Hogar", "Deportes"];
+
+    const categoriasCopia = categorias.slice();
+
+
+    const indexFound = categorias.indexOf("Hogar");
+
+    console.log(indexFound)
+
+    categoriasCopia.splice(indexFound, 1);
+
+    console.log(categorias);
+    console.log(categoriasCopia);
+
+
+
+</script>
+
+
+    
+</body>
+</html>
+
+

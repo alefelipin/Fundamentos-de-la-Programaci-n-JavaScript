@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+<h2>JavaScript Arrays:</h2>
+<h3>.slice() vs .splice()</h3>
+
+<p>Cuándo usarlos?</p>
+
+<p><b>.slice(inicio, fin): </b>cuando necesitas extraer una parte de un array. El array original se mantiene</p>
+
+<p><b>.splice(inicio, cantidad, nuevos items): </b>cuando necesitas modificar el contenido (eliminar, reemplazar o añadir elementos). El array original se modifica. Devuelve un array que contiene los elementos <b>eliminados</b> (si hay).</p>
+
+
+
+
+
+<script>
+
+/////////////////////////////////.SLICE()////////////////////
+
+const frutas = ["Manzana", "Pera", "Plátano", "Fresa", "Mango"];
+
+const copiaFrutas = frutas.slice();
+
+console.log("El array de copia es:", copiaFrutas); // ["Manzana", "Pera", "Plátano", "Fresa", "Mango"] (IGUAL)
+
+
+// Copiamos desde el índice 0 hasta el 4 (sin incluir el 4)
+
+const algunasFrutas = frutas.slice(2, 4);
+
+console.log(algunasFrutas); // ["Pera", "Plátano"];
+
+////////////////////////////.SPLICE()/////////////////////////
+
+let colores = ['rojo', 'azul', 'verde'];
+
+colores.splice(1, 1, 'amarillo'); 
+
+// Eliminamos en la posición 1 ("azul"); 1 elemento; y lo reemplazamos por "amarillo")
+
+console.log(colores) // -> ['rojo', 'amarillo', 'verde'] 
+
+
+const countries = ["Chile", "Argentina", "Brasil", "Colombia"];
+const copyCountries = countries.slice()
+
+const notSpanishSpoken = copyCountries.splice(2, 1, "Ecuador") // Devuelve el eliminado
+
+console.log(copyCountries)
+
+console.log(`El país que no habla español es ${notSpanishSpoken}`)
+
+
+
+
+
+
+
+</script>
+
+
+    
+</body>
+</html>
+
+
